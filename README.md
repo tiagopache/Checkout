@@ -1,6 +1,6 @@
 # Checkout
 
-##Checkout API developed with VS2015
+## Checkout API developed with VS2015
 
 Used frameworks:
 - .NET 4.6.1

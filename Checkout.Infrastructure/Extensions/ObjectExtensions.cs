@@ -6,14 +6,14 @@ namespace Checkout.Infrastructure.Extensions
 {
     public static class ObjectExtensions
     {
-        public static TTarget Copy<TTarget>(this object source, string excludeProperties = null)
+        public static TTarget Copy<TTarget>(this object source, TTarget targetBase = default(TTarget), string excludeProperties = null)
         {
             if (source == null)
                 return default(TTarget);
 
             var bindingFlags = BindingFlags.Public | BindingFlags.Instance;
 
-            TTarget target = Activator.CreateInstance<TTarget>();
+            TTarget target = targetBase != null ? targetBase : Activator.CreateInstance<TTarget>();
 
             string[] ignoreProperties = null;
             if (!string.IsNullOrWhiteSpace(excludeProperties))

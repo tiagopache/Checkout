@@ -23,7 +23,7 @@ namespace Checkout.Business.Service
         {
             if (found != null)
             {
-                found = toSave.Copy<TEntity>();
+                found = toSave.Copy<TEntity>(found);
 
                 found.UpdatedOn = DateTime.Now;
 
